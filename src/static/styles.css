@@ -319,14 +319,6 @@ section h3 {
   font-size: 1rem;
 }
 
-.activity-card-actions {
-  margin-top: auto;
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 button {
   background-color: var(--primary);
   color: white;
