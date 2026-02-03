@@ -187,7 +187,8 @@ section h3 {
   margin-top: auto;
   padding-top: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
 }
 
 /* Activity Tag */
@@ -285,6 +286,45 @@ section h3 {
   letter-spacing: 0.3px;
   text-transform: uppercase;
   border: none;
+}
+
+.share-button {
+  background: linear-gradient(145deg, #4a90e2, #357abd);
+  color: white;
+  margin-top: 10px;
+  padding: 6px 12px;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.share-button:hover {
+  background: linear-gradient(145deg, #357abd, #2868a8);
+  box-shadow: 0 3px 6px rgba(74, 144, 226, 0.3);
+  transform: translateY(-1px);
+}
+
+.share-button .share-icon {
+  font-size: 1rem;
+}
+
+.activity-card-actions {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 button {
@@ -433,7 +473,8 @@ button {
 }
 
 .close-modal,
-.close-login-modal {
+.close-login-modal,
+.close-share-modal {
   position: absolute;
   right: 12px;
   top: 8px;
@@ -441,6 +482,87 @@ button {
   cursor: pointer;
   color: var(--text-secondary);
   line-height: 1;
+}
+
+/* Share modal specific styling */
+.share-modal-content {
+  max-width: 400px;
+}
+
+.share-modal-content h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.share-modal-content #share-activity-name {
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.share-buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.share-platform-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.share-platform-button:hover {
+  border-color: var(--primary-light);
+  background-color: var(--primary-light);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.share-platform-button .platform-icon {
+  font-size: 1.8rem;
+}
+
+.share-platform-button.twitter:hover {
+  background-color: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.share-platform-button.facebook:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+}
+
+.share-platform-button.linkedin:hover {
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
+
+.share-platform-button.email:hover {
+  background-color: #ea4335;
+  border-color: #ea4335;
+}
+
+.share-platform-button.copy:hover {
+  background-color: #34a853;
+  border-color: #34a853;
 }
 
 /* Login modal specific styling */
