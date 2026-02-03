@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Check for saved dark mode preference
   function initDarkMode() {
+    if (!darkModeIcon) return;
+    
     const savedDarkMode = localStorage.getItem("darkMode");
     if (savedDarkMode === "enabled") {
       document.body.classList.add("dark-mode");
@@ -16,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Toggle dark mode
   function toggleDarkMode() {
+    if (!darkModeIcon) return;
+    
     document.body.classList.toggle("dark-mode");
     
     if (document.body.classList.contains("dark-mode")) {
@@ -28,7 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   
   // Event listener for dark mode toggle
-  darkModeToggle.addEventListener("click", toggleDarkMode);
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener("click", toggleDarkMode);
+  }
   
   // Initialize dark mode on page load
   initDarkMode();
